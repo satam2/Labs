@@ -16,33 +16,42 @@ public class TreeNode {
         this.right = right;
     }
     
-    // check and set upper and lower bound at each particular node
     public boolean isValidBST(TreeNode root) {
-    	int min = root.val;
-    	int max = root.val;
-    	
-    	if(root.val > max || root.val < min)
-    		return false;
-    	
-    	if(root.left.val < max) {
-    		max = root.left.val;
-    		return isValidBST(root.left);
-    	}
-    	else if(root.right.val>min) {
-    		min = root.right.val;
-    	}
-    		return false;
+    	return isValidBSTHelper(root,null,null);
     }
     
+    private boolean isValidBSTHelper(TreeNode n, Integer l, Integer u) {
+    	// check and set upper and lower bound at each particular node
+    	if(n==null)
+    		return true;
+    	if(l!=null&&n.val<=l)
+    		return false;
+    	if(u!=null&&n.val>=u)
+    		return false;
+    	if(!isValidBSTHelper(n.right, n.val, u))
+            return false;
+        if (!isValidBSTHelper(n.left, l, n.val))
+            return false;
+        
+        return true;
+
+    }
+    
+    // testing
     public static void main(String[] args) {
     	TreeNode n1 = new TreeNode(1);
     	TreeNode n2 = new TreeNode(2);
     	TreeNode n9 = new TreeNode(9);
     	TreeNode n3 = new TreeNode(3,n1,null);
-    	TreeNode n8 = new TreeNode(3,n2,n9);
-    	TreeNode n4 = new TreeNode(3,n3,n8);
+    	TreeNode n8 = new TreeNode(8,n2,n9);
+    	TreeNode n4 = new TreeNode(4,n3,n8);
     	
-    	System.out.println(n4.isValidBST(n4)+"");
+    	System.out.println(n4.isValidBST(n4)+""); // false
+    	
+    	TreeNode n5 = new TreeNode(5);
+    	TreeNode n7 = new TreeNode(7);
+    	TreeNode n6 = new TreeNode(6, n5,n7);
+    	System.out.println(n6.isValidBST(n6)+""); // true
     	
     }
 }
