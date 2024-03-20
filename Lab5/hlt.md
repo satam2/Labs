@@ -1,1 +1,1 @@
-
+Based on the hint we got in class, we need to go through both sides of the tree and keep track of the lower and upper bounds at that particular node. I did this with the use of a helper function that took in 3 parameters: a TreeNode and two Integer objects. If all values fall within their bounds and reach a null node without returning false, then we can say the tree is a valid BST. I did this using recursion because it just seemed easier. 
