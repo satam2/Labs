@@ -1,1 +1,1 @@
-
+Looking at the problem, I see that what is happening is that for each node, their left and right children are being swapped. Therefore, we need to traverse through the entire tree and swap the children of each. I decided to use recursion because it seemed easier. The base case would be if the current node is null, because it means we reached the end of the tree. Other than that, we simply swap and then traverse through both sides of the tree with the use of a temp variable.
