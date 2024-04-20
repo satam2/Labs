@@ -1,1 +1,1 @@
-I decided to use a bruteforce approach with nested for loops. I iterate through the list and compare the elements with every other element and test if they add up to the target value. 
+I decided to use a bruteforce approach with nested for loops. I iterate through the list and compare the elements with every other element and test if they add up to the target value. I made sure to check if the list is empty. This is probably not the best approach due to its time complexity for n^2 but it does the job.
