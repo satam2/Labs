@@ -5,6 +5,7 @@ Problem 1
 4. 2^n vs 2^(2n)
 
 Problem 2
+
 /* isPrime(n): 
   for(i = 2, i*i <= n; i++) {
     if(n % i == 0) {
@@ -12,6 +13,7 @@ Problem 2
     }
   return true
 */
+
 
 best case:
 average case: 
