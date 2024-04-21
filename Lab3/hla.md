@@ -11,7 +11,6 @@
 5. 2^n vs 2^(2n)
 
 	these are asymptotically the same because when we ignore the coefficient for 2n, the order of growths for both are the same.
-
 <br>
 
 **Problem 2**
@@ -23,7 +22,9 @@ isPrime(n):
     }
   return true
 
-
+<br>
 best case:
+<br>
 worst case: 
+<br>
 avg case:
